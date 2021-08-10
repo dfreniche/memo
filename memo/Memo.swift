@@ -17,12 +17,15 @@ struct Memo: ParsableCommand {
     var message: String?
     
     func run() throws {
-        print(message)
-        
         if (list) {
            listAllMessages()
         } else {
-           saveMessage(message: message ?? "")
+            guard let message = message else {
+                
+                print("You need a message. Try with --help")
+                return
+            }
+            saveMessage(message: message)
         }
     }
     
@@ -42,10 +45,10 @@ struct Memo: ParsableCommand {
     }
     
     func listAllMessages() {
+        guard let entries = RealmUtil.realm?.objects(Entry.self) else { return }
+        guard entries.count > 0 else { return }
         
-        guard let entries = RealmUtil.realm?.objects(Entry.self) else {return}
-        
-        print("Listing")
+        print("Listing all \(entries.count) entries")
         
         entries.enumerated().forEach { (index, entry) in
             print("[ \(entry.timestamp) ] \(entry.text)")
