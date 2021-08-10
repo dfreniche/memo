@@ -3,28 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9988B45025E1307C007E01EA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988B44F25E1307C007E01EA /* main.swift */; };
+		995A6A7226B99D8E0086DA3E /* memo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9988B44C25E1307C007E01EA /* memo */; };
+		9988B45925E130F0007E01EA /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 9988B45825E130F0007E01EA /* ArgumentParser */; };
+		9988B45D25E13169007E01EA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9988B45C25E13169007E01EA /* RealmSwift */; };
+		9988B46125E131AD007E01EA /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988B46025E131AD007E01EA /* Memo.swift */; };
+		9988B46425E13462007E01EA /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988B46325E13462007E01EA /* RealmUtil.swift */; };
+		9988B46725E135A1007E01EA /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988B46625E135A1007E01EA /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9988B44A25E1307C007E01EA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			buildActionMask = 12;
+			dstPath = /Users/dfreniche/scripts;
 			dstSubfolderSpec = 0;
 			files = (
+				995A6A7226B99D8E0086DA3E /* memo in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9988B44C25E1307C007E01EA /* memo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = memo; sourceTree = BUILT_PRODUCTS_DIR; };
-		9988B44F25E1307C007E01EA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9988B46025E131AD007E01EA /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		9988B46325E13462007E01EA /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
+		9988B46625E135A1007E01EA /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9988B45D25E13169007E01EA /* RealmSwift in Frameworks */,
+				9988B45925E130F0007E01EA /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +67,9 @@
 		9988B44E25E1307C007E01EA /* memo */ = {
 			isa = PBXGroup;
 			children = (
-				9988B44F25E1307C007E01EA /* main.swift */,
+				9988B46025E131AD007E01EA /* Memo.swift */,
+				9988B46325E13462007E01EA /* RealmUtil.swift */,
+				9988B46625E135A1007E01EA /* Entry.swift */,
 			);
 			path = memo;
 			sourceTree = "<group>";
@@ -78,6 +90,10 @@
 			dependencies = (
 			);
 			name = memo;
+			packageProductDependencies = (
+				9988B45825E130F0007E01EA /* ArgumentParser */,
+				9988B45C25E13169007E01EA /* RealmSwift */,
+			);
 			productName = memo;
 			productReference = 9988B44C25E1307C007E01EA /* memo */;
 			productType = "com.apple.product-type.tool";
@@ -93,6 +109,7 @@
 				TargetAttributes = {
 					9988B44B25E1307C007E01EA = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -105,6 +122,10 @@
 				Base,
 			);
 			mainGroup = 9988B44325E1307C007E01EA;
+			packageReferences = (
+				9988B45725E130F0007E01EA /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				9988B45B25E13169007E01EA /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 9988B44D25E1307C007E01EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -119,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9988B45025E1307C007E01EA /* main.swift in Sources */,
+				9988B46725E135A1007E01EA /* Entry.swift in Sources */,
+				9988B46125E131AD007E01EA /* Memo.swift in Sources */,
+				9988B46425E13462007E01EA /* RealmUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +267,15 @@
 		9988B45425E1307C007E01EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -253,7 +283,13 @@
 		9988B45525E1307C007E01EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -281,6 +317,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9988B45725E130F0007E01EA /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/apple/swift-argument-parser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
+		9988B45B25E13169007E01EA /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9988B45825E130F0007E01EA /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9988B45725E130F0007E01EA /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		9988B45C25E13169007E01EA /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9988B45B25E13169007E01EA /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9988B44425E1307C007E01EA /* Project object */;
 }
