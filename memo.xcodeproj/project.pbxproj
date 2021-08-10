@@ -33,6 +33,7 @@
 		9988B46025E131AD007E01EA /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		9988B46325E13462007E01EA /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		9988B46625E135A1007E01EA /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		99E5675226C28F6500ECAD5C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 		9988B44325E1307C007E01EA = {
 			isa = PBXGroup;
 			children = (
+				99E5675226C28F6500ECAD5C /* README.md */,
 				9988B44E25E1307C007E01EA /* memo */,
 				9988B44D25E1307C007E01EA /* Products */,
 			);
