@@ -6,8 +6,8 @@
         "repositoryURL": "http://github.com/realm/realm-cocoa.git",
         "state": {
           "branch": null,
-          "revision": "44b9632b22240f0baa4b50964c5722e27094aea0",
-          "version": "10.6.0"
+          "revision": "83a07f6a508c3427058d9e2c466208d0b6a960fa",
+          "version": "10.12.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "6431a4bc6530ec16731ef1c66b379cbef6da01f0",
-          "version": "10.5.0"
+          "revision": "e72b3078bfc5c3f69a0b18f7a220be27e28c463f",
+          "version": "11.2.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "http://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
-          "revision": "9564d61b08a5335ae0a36f789a7d71493eacadfc",
-          "version": "0.3.2"
+          "revision": "83b23d940471b313427da226196661856f6ba3e0",
+          "version": "0.4.4"
         }
       }
     ]
